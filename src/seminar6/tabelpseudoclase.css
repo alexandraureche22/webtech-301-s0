@@ -1,0 +1,22 @@
+
+thead tr:first-child {
+    background-color: lightgray;
+  }
+  
+  
+  tbody tr:first-child {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+  tbody tr:last-child {
+    background-color: green;
+    color: white;
+  }
+  
+  
+  tbody tr:nth-child(odd) {
+    background-color: violet;
+  }
+  

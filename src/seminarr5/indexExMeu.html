@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agenda de contacte</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #999;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+      }
+      button {
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const form = document.getElementById("form");
+        const table = document.getElementById("agendaBody");
+
+        // handler pentru adăugarea unui nou contact
+        const formSubmitHandler = (e) => {
+          e.preventDefault();
+
+          const nume = document.getElementById("nume").value.trim();
+          const telefon = document.getElementById("telefon").value.trim();
+
+          if (nume === "" || telefon === "") {
+            alert("Te rog completează ambele câmpuri!");
+            return;
+          }
+
+          // creăm un rând nou
+          const row = document.createElement("tr");
+          const cellNume = document.createElement("td");
+          const cellTelefon = document.createElement("td");
+
+          cellNume.textContent = nume;
+          cellTelefon.textContent = telefon;
+
+          row.appendChild(cellNume);
+          row.appendChild(cellTelefon);
+
+          table.appendChild(row);
+
+          // resetăm formularul
+          form.reset();
+        };
+
+        form.onsubmit = formSubmitHandler;
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1> Agenda de contacte</h1>
+
+    <form id="form">
+      <input type="text" id="nume" placeholder="Nume" />
+      <input type="text" id="telefon" placeholder="Telefon" />
+      <button type="submit">Adaugă contact</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nume</th>
+          <th>Telefon</th>
+        </tr>
+      </thead>
+      <tbody id="agendaBody"></tbody>
+    </table>
+  </body>
+</html>
+

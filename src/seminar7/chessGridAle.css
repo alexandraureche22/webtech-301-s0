@@ -1,0 +1,209 @@
+/* html: 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chessboard Grid</title>
+    <link rel="stylesheet" href="chessGridAle.css" />
+  </head>
+  <body>
+    <div class="board-wrapper">
+      <div class="letters top">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+      </div>
+      <div class="numbers left">
+        <div>8</div>
+        <div>7</div>
+        <div>6</div>
+        <div>5</div>
+        <div>4</div>
+        <div>3</div>
+        <div>2</div>
+        <div>1</div>
+      </div>
+      <div class="chessboard">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="numbers right">
+        <div>8</div>
+        <div>7</div>
+        <div>6</div>
+        <div>5</div>
+        <div>4</div>
+        <div>3</div>
+        <div>2</div>
+        <div>1</div>
+      </div>
+      <div class="letters bottom">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+      </div>
+    </div>
+  </body>
+</html>
+*/
+* {
+  margin: opx;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  color: #802020;
+}
+
+.board-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  border: 4px solid #802020;
+}
+
+.chessboard div {
+  width: 80px;
+  height: 80px;
+}
+
+.chessboard div:nth-child(16n + 1),
+.chessboard div:nth-child(16n + 3),
+.chessboard div:nth-child(16n + 5),
+.chessboard div:nth-child(16n + 7),
+.chessboard div:nth-child(16n + 10),
+.chessboard div:nth-child(16n + 12),
+.chessboard div:nth-child(16n + 14),
+.chessboard div:nth-child(16n + 16) {
+  background: #b58863;
+}
+
+.chessboard div:nth-child(16n + 2),
+.chessboard div:nth-child(16n + 4),
+.chessboard div:nth-child(16n + 6),
+.chessboard div:nth-child(16n + 8),
+.chessboard div:nth-child(16n + 9),
+.chessboard div:nth-child(16n + 11),
+.chessboard div:nth-child(16n + 13),
+.chessboard div:nth-child(16n + 15) {
+  background: #f0d9b5;
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  text-align: center;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.numbers {
+  position: absolute;
+  top: 4px;
+  display: grid;
+  grid-template-rows: repeat(8, 80px);
+  align-items: center;
+  font-weight: bold;
+}
+
+.left {
+  left: -25px;
+}
+
+.right {
+  right: -25px;
+}
+
+.top {
+  margin-bottom: 4px;
+}
+
+.bottom {
+  margin-top: 4px;
+}

@@ -1,0 +1,24 @@
+.btn:hover {
+  color: blue;
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+input:required {
+  background-color: red;
+}
+
+p::first-line {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/* Checkbox bifat - bordură roșie + bifă albastră */
+input[type="checkbox"]:checked {
+  accent-color: blue;
+  border: 2px solid red;
+  outline: 2px solid red;
+  border-radius: 3px;
+}

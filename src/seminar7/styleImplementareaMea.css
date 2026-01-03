@@ -1,0 +1,83 @@
+/* html: 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flex E1</title>
+    <link rel="stylesheet" href="./styleImplementareaMea.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="column">
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+      </div>
+
+      <div class="column">
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+      </div>
+
+      <div class="column">
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+        <div class="column-item">Item</div>
+      </div>
+    </div>
+  </body>
+</html>
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  padding: 32px;
+  color: white;
+  background-color: #eee;
+}
+
+/* container pe 3 coloane */
+.container {
+  background-color: #c21322;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+}
+
+/* fiecare coloană */
+.column {
+  background-color: #9b0f1a;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  border-radius: 8px;
+}
+
+/* elementele din coloane */
+.column-item {
+  background-color: #ffffff33;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 18px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* hover styling */
+.column-item:hover {
+  background-color: white;
+  color: #c21322;
+  transform: scale(1.05);
+}

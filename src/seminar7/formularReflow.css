@@ -1,0 +1,86 @@
+/*html:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formular Reflowabil</title>
+    <link rel="stylesheet" href="./formularReflow.css" />
+  </head>
+
+  <body>
+    <form class="form-reflow">
+      <div class="form-group">
+        <label for="prenume">Prenume:</label>
+        <input type="text" id="prenume" name="prenume" />
+      </div>
+
+      <div class="form-group">
+        <label for="nume">Nume:</label>
+        <input type="text" id="nume" name="nume" />
+      </div>
+
+      <div class="form-group">
+        <label for="adresa">Adresă:</label>
+        <input type="text" id="adresa" name="adresa" />
+      </div>
+
+      <div class="form-group">
+        <label for="varsta">Vârstă:</label>
+        <input type="number" id="varsta" name="varsta" />
+      </div>
+
+      <input class="submit-btn" type="submit" value="Trimite" />
+    </form>
+  </body>
+</html>
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 32px;
+}
+
+/* FORM as a flexible container */
+.form-reflow {
+  display: flex;
+  flex-wrap: wrap; /* face formularul reflowable */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Each input group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* toate grupurile au aceeași lățime */
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #777;
+  border-radius: 6px;
+}
+
+/* Submit button */
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #c21322;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #9d0f1a;
+}

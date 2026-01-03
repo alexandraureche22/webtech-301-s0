@@ -1,0 +1,154 @@
+:root {
+  --base-background-color: white;
+  --secondary-background-color: whitesmoke;
+  --secondary-text-color: gray;
+  --badge-color: lime;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 10% auto 10%;
+  grid-template-areas:
+    "search-bar chat-heading"
+    "contacts chat"
+    "contacts chat-input";
+  height: 100vh;
+}
+
+/* =============== SIDEBAR =============== */
+.sidebar {
+  grid-area: search-bar / search-bar / chat-input / contacts;
+}
+
+.search-bar {
+  grid-area: search-bar;
+  background: var(--secondary-background-color);
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-bar input {
+  width: 95%;
+  height: 2.2em;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+}
+
+.contacts {
+  grid-area: contacts;
+  overflow-y: auto;
+}
+
+.contact {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.contact:nth-child(even) {
+  background: var(--secondary-background-color);
+}
+
+.avatar {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: var(--badge-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.contact-container {
+  margin-left: 10px;
+}
+
+.contact-container .status {
+  font-size: 0.8em;
+  color: var(--secondary-text-color);
+}
+
+/* =============== CHAT HEADER =============== */
+.chat-heading {
+  grid-area: chat-heading;
+  background: var(--secondary-background-color);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* =============== CHAT MESSAGES =============== */
+.chat {
+  grid-area: chat;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  width: 70%;
+  min-height: 8vh;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* Left (my messages) */
+.message:nth-child(odd) {
+  background: var(--secondary-background-color);
+  float: left;
+  clear: right;
+}
+
+/* Right (their messages) */
+.message:nth-child(even) {
+  background: var(--badge-color);
+  float: right;
+  text-align: right;
+  clear: left;
+}
+
+.time {
+  color: var(--secondary-text-color);
+  font-size: 0.8em;
+}
+
+.time::before {
+  content: "@";
+}
+
+/* =============== INPUT BAR =============== */
+.chat-input {
+  grid-area: chat-input;
+  background: var(--secondary-background-color);
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.chat-input input[type="button"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid gray;
+  cursor: pointer;
+}

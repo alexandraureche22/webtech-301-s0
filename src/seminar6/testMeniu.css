@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  justify-content: center; /* centrează pe orizontală */
+  align-items: center; /* centrează pe verticală */
+  height: 100vh;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+}
+
+.menu a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* centreaza textul pe orizontala */
+  align-items: center; /* centreaza textul pe verticala */
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: gray;
+}

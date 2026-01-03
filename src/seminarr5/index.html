@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eveniment Custom</title>
+  </head>
+  <body>
+    <input id="myInput" placeholder="Scrie ceva aici..." />
+    <p id="result"></p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("myInput");
+        const result = document.getElementById("result");
+
+        // Creăm un eveniment custom
+        const myCustomEvent = new CustomEvent("myCustomEvent", {
+          detail: { message: "Evenimentul personalizat a fost trimis!" }
+        });
+
+        // Când se tastează ceva în input
+        input.addEventListener("input", () => {
+          console.log("Eveniment nativ: utilizatorul a scris.");
+          // declanșăm evenimentul custom
+          document.dispatchEvent(myCustomEvent);
+        });
+
+        // Când se declanșează evenimentul custom
+        document.addEventListener("myCustomEvent", (e) => {
+          console.log(e.detail.message);
+          result.textContent = e.detail.message;
+        });
+      });
+    </script>
+  </body>
+</html>
