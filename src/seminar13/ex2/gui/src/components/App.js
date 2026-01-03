@@ -1,7 +1,9 @@
+import BookList from './BookList'
+
 function App () {
   return (
     <div>
-      i am the app
+      <BookList />
     </div>
   )
 }
